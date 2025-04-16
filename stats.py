@@ -13,3 +13,18 @@ def count_char(text):
             char_dict[ltext[i]] += 1
     
     return char_dict
+
+def sort_dict(dict):
+    sorted_list = []
+    
+    for key, val in dict.items():
+        if key.isalpha():
+            tmp_dict = {"key": key, "val": val}
+            sorted_list.append(tmp_dict)
+    
+    def sort_on(d):
+        return d["val"]
+    
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
+        
